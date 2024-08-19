@@ -1,7 +1,7 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { Route, Routes } from 'react-router-dom';
-import LandingPage from './Pages/Landing_Page';
+import LandingPage from './Pages/LandingPage';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
