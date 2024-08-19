@@ -1,11 +1,12 @@
 import React from 'react'
+import HeaderComponent from '../components/HeaderComponent'
 
-function Landing_Page() {
+function LandingPage() {
   return (
     <div>
-      
+      <HeaderComponent page='home'/>
     </div>
   )
 }
 
-export default Landing_Page
+export default LandingPage

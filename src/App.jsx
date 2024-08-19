@@ -1,13 +1,55 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import Button from 'react-bootstrap/Button';
+import { Route, Routes } from 'react-router-dom';
+import LandingPage from './Pages/Landing_Page';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Home from './Pages/Home';
+import RegistrationForm from './Pages/Registration/RegistrationForm';
+import StudentTables from './Pages/Students/StudentTables';
+import StudentDetails from './Pages/Students/StudentDetails';
+import StudentsRecord from './Pages/Students/StudentsRecord';
+import AddClass from './Pages/StudyMaterials/AddClass';
+import BooksPdf from './Pages/StudyMaterials/BooksPdf';
+import VideosPdf from './Pages/StudyMaterials/VideosPdf';
+import TestHome from './Pages/Test/TestHome';
+import AddTest from './Pages/Test/AddTest';
+import MarkList from './Pages/Test/MarkList';
+import TestList from './Pages/Test/TestList';
+import FAQ from './Pages/TermsAndConditions/FAQ';
+import PrivacyPolicy from './Pages/TermsAndConditions/PrivacyPolicy';
+import TermsAndConditions from './Pages/TermsAndConditions/TermsAndConditions';
+import Profile from './Pages/Profile/Profile';
+import EditProfile from './Pages/Profile/EditProfile';
+
 
 function App() {
 
   return (
-    <div>
-      <Button>hgjk</Button>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/registrationForm' element={<RegistrationForm/>}/>
+        <Route path='/studentTables' element={<StudentTables/>}/>
+        <Route path='/studentDetails' element={<StudentDetails/>}/>
+        <Route path='/studentsRecord' element={<StudentsRecord/>}/>
+        <Route path='/addClass' element={<AddClass/>}/>
+        <Route path='/booksPdf' element={<BooksPdf/>}/>
+        <Route path='/VideosPdf' element={<VideosPdf/>}/>
+        <Route path='/TestHome' element={<TestHome/>}/>
+        <Route path='/AddTest' element={<AddTest/>}/>
+        <Route path='/MarkList' element={<MarkList/>}/>
+        <Route path='/TestList' element={<TestList/>}/>
+        <Route path='/FAQ' element={<FAQ/>}/>
+        <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/TermsAndConditions' element={<TermsAndConditions/>}/>
+        <Route path='/Profile' element={<Profile/>}/>
+        <Route path='/EditProfile' element={<EditProfile/>}/>
+      </Routes>
+    </>
   )
 }
 
