@@ -5,6 +5,6 @@ export const Image=({ src, alt, width, style, height, quality = 100, loading = '
     // Inline style to handle responsive imagesz
 
 
-    return  (<div><img src={src} alt={alt} width={width} height={height} loading={loading} style={style}  {...props} /></div>) 
+    return  (<><img src={src} alt={alt} width={width} height={height} loading={loading} style={style}  {...props} /></>) 
 
 };

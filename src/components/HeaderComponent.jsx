@@ -4,12 +4,25 @@ import Navbar from "react-bootstrap/Navbar";
 import { HiChevronLeft } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 import logo from '../assets/navLogo.png'
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function HeaderComponent({page}) {
+function HeaderComponent({page,title}) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goBack = () => {
+    // Check if there is a history to go back to
+    if (location.key) {
+      navigate(-1);
+    } else {
+      // Redirect to a default page, e.g., home page
+      navigate('/');
+    }
+  };
   return (
     <Navbar className="" style={{backgroundColor:'#DBDC31'}}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand onClick={goBack}>
           <HiChevronLeft />
         </Navbar.Brand>
         <Navbar.Brand href="#home">
@@ -22,7 +35,8 @@ function HeaderComponent({page}) {
             />
           </Navbar.Brand>
           <Navbar.Brand href="#home">
-            {page}
+            <h4>{page}</h4>
+            <h6>{title}</h6>
           </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
