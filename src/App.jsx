@@ -21,6 +21,9 @@ import PrivacyPolicy from './Pages/TermsAndConditions/PrivacyPolicy';
 import TermsAndConditions from './Pages/TermsAndConditions/TermsAndConditions';
 import Profile from './Pages/Profile/Profile';
 import EditProfile from './Pages/Profile/EditProfile';
+import MentorHome from './Mentor/MentorHome';
+import MentorAccess from './Mentor/MentorAccess';
+import MentorRegistrationForm from './Mentor/RegistrationForm';
 
 
 function App() {
@@ -48,6 +51,9 @@ function App() {
         <Route path='/TermsAndConditions' element={<TermsAndConditions/>}/>
         <Route path='/Profile' element={<Profile/>}/>
         <Route path='/EditProfile' element={<EditProfile/>}/>
+        <Route path='/MentorHome' element={<MentorHome/>}/>
+        <Route path='/MentorAccess' element={<MentorAccess/>}/>
+        <Route path='/MentorRegistrationForm' element={<MentorRegistrationForm/>}/>
       </Routes>
     </>
   )
