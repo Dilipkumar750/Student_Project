@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { HiChevronLeft } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 import logo from '../assets/navLogo.png'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 function HeaderComponent({page,title}) {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ function HeaderComponent({page,title}) {
       navigate('/');
     }
   };
+
   return (
     <Navbar className="" style={{backgroundColor:'#DBDC31'}}>
       <Container>
@@ -41,7 +42,7 @@ function HeaderComponent({page,title}) {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-          <AiOutlineHome />
+          <Link to="/Profile"><AiOutlineHome /></Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>

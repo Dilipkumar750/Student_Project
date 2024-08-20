@@ -51,6 +51,10 @@ import ApplyForm from './Mentor/jobApply/ApplyForm';
 import ApplySuccess from './Mentor/jobApply/ApplySuccess';
 import BooksAndVideos from './Pages/StudyMaterials/BooksAndVideos';
 import MoreInfoHomes from './Admin/MoreInformations/MoreInfoHomes';
+import TestCreate from './Pages/Test/TestCreate';
+import AdminInfoTypes from './Admin/MoreInformations/AdminInfoTypes';
+import AdminAddJob from './Admin/MoreInformations/AdminAddJob';
+import StudentRequest from './Admin/MoreInformations/StudentRequest';
 export const HOST='http://localhost:8080/rural_rise' 
 
 
@@ -110,6 +114,10 @@ function App() {
         <Route path='/ApplySuccess' element={<ApplySuccess/>}/>
         <Route path='/BooksAndVideos' element={<BooksAndVideos/>}/>
         <Route path='/MoreInfoHomes' element={<MoreInfoHomes/>}/>
+        <Route path='/TestCreate' element={<TestCreate/>}/>
+        <Route path='/AdminInfoTypes/:title' element={<AdminInfoTypes/>}/>
+        <Route path='/AdminAddJob' element={<AdminAddJob/>}/>
+        <Route path='/StudentRequest' element={<StudentRequest/>}/>
       </Routes>
     </>
   )
