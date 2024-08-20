@@ -11,16 +11,58 @@ import { Image } from '../components/Image';
 import axios from 'axios';
 import { HOST } from '../App';
 import { useNavigate } from 'react-router-dom';
+
 function Register() {
-  const [createuser, setCreateUser] = useState({});
-  const [valid ,setValid] = useState({});
+  const [createuser, setCreateUser] = useState({
+    name: '',
+    email: '',
+    role: '',
+    contact_number: '',
+    classes: '',
+    department: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const [valid, setValid] = useState('');
   const navigate = useNavigate();
-  const register = ()=>{
-    axios.post(`${HOST}/user/register`,createuser).then((res)=>{console.log(res.data); setValid(res.data.message)})
-    if(valid==='Success'){
-      navigate('/login');
+
+  const resetForm = () => {
+    setCreateUser({
+      name: '',
+      email: '',
+      role: '',
+      contact_number: '',
+      classes: '',
+      department: '',
+      password: '',
+      confirmPassword: ''
+    });
+  };
+
+  const register = async () => {
+    try {
+      const res = await axios.post(`${HOST}/user/register`, createuser);
+      console.log(res.data);
+      setValid(res.data.message);
+
+      if (res.data.message === 'Success') {
+        resetForm(); // Reset form fields after successful registration
+        navigate('/login'); // Navigate to the login page
+      }
+    } catch (err) {
+      console.error(err);
+      // Handle error case, e.g., show error message
     }
-  }
+  };
+
+  const handleChange = (e) => {
+    setCreateUser({
+      ...createuser,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <Container className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh', paddingBottom: '0px' }}>
       <Row className="w-100">
@@ -36,8 +78,9 @@ function Register() {
                   type="text"
                   placeholder="Name"
                   aria-label="Name"
-                  name='name'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+                  name="name"
+                  value={createuser.name}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={user} alt="Name icon" style={{ width: '20px', height: '20px' }} />
@@ -52,28 +95,33 @@ function Register() {
                   type="email"
                   placeholder="Email"
                   aria-label="Email"
-                  name='email'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+                  name="email"
+                  value={createuser.email}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={email} alt="Email icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
+
+            {/* Role Field */}
             <Form.Group controlId="forrole" className="mb-3">
               <InputGroup>
                 <Form.Select
                   aria-label="Role"
                   name="role"
-                  onChange={(e) => setCreateUser({ ...createuser, [e.target.name]: e.target.value })}
+                  value={createuser.role}
+                  onChange={handleChange}
                 >
-                  <option value="" selected>Select Role</option>
+                  <option value="" disabled>Select Role</option>
                   <option value="student">Student</option>
                   <option value="mentor">Mentor</option>
                   <option value="admin">Admin</option>
                 </Form.Select>
               </InputGroup>
             </Form.Group>
+
             {/* Contact Number Field */}
             <Form.Group controlId="formContactNumber" className="mb-3">
               <InputGroup>
@@ -81,9 +129,9 @@ function Register() {
                   type="text"
                   placeholder="Contact Number"
                   aria-label="Contact Number"
-                  name='contact_number'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
-
+                  name="contact_number"
+                  value={createuser.contact_number}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={telephone} alt="Contact Number icon" style={{ width: '20px', height: '20px' }} />
@@ -98,8 +146,9 @@ function Register() {
                   type="text"
                   placeholder="Class"
                   aria-label="Class"
-                  name='classes'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+                  name="classes"
+                  value={createuser.classes}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={classIcon} alt="Class icon" style={{ width: '20px', height: '20px' }} />
@@ -114,8 +163,9 @@ function Register() {
                   type="text"
                   placeholder="Department"
                   aria-label="Department"
-                  name='department'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+                  name="department"
+                  value={createuser.department}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={department} alt="Department icon" style={{ width: '20px', height: '20px' }} />
@@ -131,8 +181,9 @@ function Register() {
                   placeholder="Password"
                   style={{ paddingRight: '40px' }}
                   aria-label="Password"
-                  name='password'
-                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+                  name="password"
+                  value={createuser.password}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={password} alt="Password icon" style={{ width: '20px', height: '20px' }} />
@@ -148,6 +199,9 @@ function Register() {
                   placeholder="Confirm Password"
                   style={{ paddingRight: '40px' }}
                   aria-label="Confirm Password"
+                  name="confirmPassword"
+                  value={createuser.confirmPassword}
+                  onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={password} alt="Confirm Password icon" style={{ width: '20px', height: '20px' }} />
@@ -165,7 +219,7 @@ function Register() {
         variant="primary"
         className="mt-4"
         style={{ backgroundColor: '#DBDC31', borderColor: '#DBDC31', width: '90%' }}
-        onClick={()=>{register()}}
+        onClick={register}
       >
         REGISTER
       </Button>
