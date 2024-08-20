@@ -4,6 +4,7 @@ import { HiChevronRight } from 'react-icons/hi';
 import HeaderComponent from '../../components/HeaderComponent';
 import contentform from '../../assets/contentform.png';
 import addtest from '../../assets/ADDCLASS.png'
+import { Link } from 'react-router-dom';
 
 function AddTest() {
   // Define an array for the class names
@@ -14,10 +15,12 @@ function AddTest() {
       <HeaderComponent page="Add Test" title="Adding Test Form" />
       <Container fluid style={{ marginTop: '1rem' }}>
         <Card>
-          <Card.Header className="d-flex align-items-center">
-            <img src={addtest} alt="Add Class" style={{ width: '30px', marginRight: '1rem' }} />
-            ADD CLASS
-          </Card.Header>
+          <Link to={`/MentorTest`}>
+            <Card.Header className="d-flex align-items-center">
+              <img src={addtest} alt="Add Class" style={{ width: '30px', marginRight: '1rem' }} />
+              ADD TEST
+            </Card.Header>
+          </Link>
           <Card.Body>
             <Row className="g-3">
               {classNames.map((className, index) => (

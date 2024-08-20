@@ -2,6 +2,7 @@ import React from "react";
 import HeaderComponent from "../../components/HeaderComponent";
 import View from "../../components/View";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 function Test() {
@@ -73,7 +74,7 @@ function Test() {
                     </View>
                 </View>
             </View>
-            <View style={{ margin: '0 auto', width: 'fit-content' }}><Button style={{ backgroundColor: '#DBDC31', border: '0', padding: "4px 20px", color: 'black' }}>Submit</Button></View>
+            <View style={{ margin: '0 auto', width: 'fit-content' }}><Link to={`/AddTest`}><Button style={{ backgroundColor: '#DBDC31', border: '0', padding: "4px 20px", color: 'black' }}>Submit</Button></Link></View>
         </>
     );
 }

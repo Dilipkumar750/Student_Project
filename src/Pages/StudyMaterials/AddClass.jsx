@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import List from '../../components/List';
 import openBookImg from '../../assets/openBook.png';
 import { HiChevronRight } from 'react-icons/hi';
@@ -6,8 +6,39 @@ import View from '../../components/View';
 import { Image } from '../../components/Image';
 import HeaderComponent from '../../components/HeaderComponent';
 import addclass from '../../assets/ADDCLASS.png';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Add Class
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <input type="text" placeholder='class' style={{border:"1px solid black"}} />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide} style={{ backgroundColor: '#DBDC31' }}>Add</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+
 
 function AddClass() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   // Define an array for the class names
   const classNames = ['Class-1st', 'Class-2nd', 'Class-3rd', 'Class-4th'];
 
@@ -16,7 +47,7 @@ function AddClass() {
       <HeaderComponent page="Add study Material" title="Books" />
       <View>
         <View style={{ margin: '1rem', border: '1px solid black' }}>
-          <View style={{ borderBottom: '1px solid black', padding: '1rem', display: 'flex', alignItems: 'center' }}>
+          <View onClick={() => setModalShow(true)} style={{ borderBottom: '1px solid black', padding: '1rem', display: 'flex', alignItems: 'center' }}>
             <Image src={addclass} href="/" alt="Add Class" style={{ width: '30px', marginRight: '1rem' }} />
             ADD CLASS
           </View>
@@ -39,6 +70,11 @@ function AddClass() {
             ))}
           </View>
         </View>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </View>
     </>
   );
