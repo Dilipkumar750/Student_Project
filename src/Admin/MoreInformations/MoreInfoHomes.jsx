@@ -44,7 +44,7 @@ function MoreInfoHomes() {
           <List key={inf.title}>
             <Image src={inf.image} alt="open book" style={{ width: "90%" }} />
             <span>{inf.title}</span>
-            <Link to={`/InformationTypes/${inf.title}`}><HiChevronRight style={{ height: "100%", width: "100%" }} /></Link>
+            <Link to={`/AdminInfoTypes/${inf.title}`}><HiChevronRight style={{ height: "100%", width: "100%" }} /></Link>
           </List>
         ))}
       </View>
