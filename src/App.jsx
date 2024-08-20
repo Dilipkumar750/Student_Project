@@ -36,8 +36,7 @@ import MentorTest from './Mentor/test/Test';
 import MentorTestSuccess from './Mentor/test/Success';
 import Progress from './Mentor/test/Progress';
 import Information from './Mentor/informations/Information';
-
-
+import InformationTypes from './Mentor/informations/InformationTypes';
 
 function App() {
 
@@ -78,6 +77,7 @@ function App() {
         <Route path='/MentorTest' element={<MentorTest/>}/>
         <Route path='/Progress' element={<Progress/>}/>
         <Route path='/Information' element={<Information/>}/>
+        <Route path='/InformationTypes' element={<InformationTypes/>}/>
 
       </Routes>
     </>
