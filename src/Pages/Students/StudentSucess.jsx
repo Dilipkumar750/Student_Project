@@ -32,6 +32,7 @@ function StudentSuccess() {
         </View>
       </View>
       <Button
+      href='Home'
         variant="primary"
         className="mb-0"
         style={{ 
