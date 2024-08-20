@@ -40,9 +40,10 @@ function StudentTables() {
           <View>Details</View>
         </View>
         
-        {data1.map((student,key) => (
+        {Array.isArray(data1) && data1.length > 0 && data1
+            .filter((value,key) => value.name === 'student').map((student,key) => (
           <View 
-            key={student.id} 
+            key={value.id} 
             style={{ 
               display: 'flex', 
               justifyContent: 'space-between', 
@@ -52,7 +53,7 @@ function StudentTables() {
             }}
           >
             <View>{key+1}</View>
-            <View style={{ flexGrow: 1, textAlign: 'center' }}>{student.name}</View>
+            <View style={{ flexGrow: 1, textAlign: 'center' }}>{value.name}</View>
             <Button 
               variant="primary" 
               style={{ 
