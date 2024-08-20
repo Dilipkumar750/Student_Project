@@ -50,6 +50,7 @@ import JobApply from './Mentor/jobApply/JobApply';
 import JobDiscription from './Mentor/jobApply/JobDiscription';
 import ApplyForm from './Mentor/jobApply/ApplyForm';
 import ApplySuccess from './Mentor/jobApply/ApplySuccess';
+import BooksAndVideos from './Pages/StudyMaterials/BooksAndVideos';
 export const HOST='http://localhost:8080/rural_rise' 
 
 
@@ -108,7 +109,7 @@ function App() {
         <Route path='/JobDiscription/:id' element={<JobDiscription/>}/>
         <Route path='/ApplyForm' element={<ApplyForm/>}/>
         <Route path='/ApplySuccess' element={<ApplySuccess/>}/>
-
+        <Route path='/BooksAndVideos' element={<BooksAndVideos/>}/>
       </Routes>
     </>
   )
