@@ -45,7 +45,7 @@ import MentorList from './Admin/MentorList';
 import MentorRecords from './Admin/MentorRecords';
 import MoreInformations from './Admin/MoreInformations';
 import MentorSuccess from './Admin/MentorSuccess';
-
+import InformationDetails from './Mentor/informations/InformationDetails';
 
 function App() {
 
@@ -95,7 +95,9 @@ function App() {
         <Route path='/MentorRecords' element={<MentorRecords/>}/>
         <Route path='/MoreInformations' element={<MoreInformations/>}/>
         <Route path='/MentorSuccess' element={<MentorSuccess/>}/>
-
+        <Route path='/InformationTypes/:title' element={<InformationTypes/>}/>
+        <Route path='/MentorTestSuccess' element={<MentorTestSuccess/>}/>
+        <Route path='/InformationDetails/:title' element={<InformationDetails/>}/>
 
       </Routes>
     </>
