@@ -7,7 +7,7 @@ import department from "../assets/department.png";
 import telephone from "../assets/telephone.png";
 import email from "../assets/mail.png";
 import View from "../components/View"
-import { Image } from '../../components/Image';
+import { Image } from '../components/Image';
 
 function Register() {
   return (

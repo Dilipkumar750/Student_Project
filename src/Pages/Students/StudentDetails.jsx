@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
-import View from "../components/View"; 
+import View from "../../components/View"; 
 
 function StudentDetails() {
   const [email, setEmail] = useState('');

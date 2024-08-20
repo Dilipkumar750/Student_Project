@@ -4,7 +4,6 @@ import { Image } from "../components/Image";
 import View from "../components/View";
 import { Button } from "react-bootstrap";
 import importImg from "../assets/import.png";
-import View from "../components/View"; 
 
 function PaymentDetails() {
     return (

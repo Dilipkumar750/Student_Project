@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
-import View from "../components/View"; 
+import View from "../../components/View"; 
 
 function StudentTables() {
   const students = [
