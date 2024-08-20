@@ -28,6 +28,9 @@ import Payment from './Mentor/Payment';
 import PaymentSuccess from './Mentor/PaymentSuccess';
 import PaymentDetails from './Mentor/PaymentDetails';
 import StudyMaterialsList from './Mentor/StudyMaterialsList';
+import Materials from './Mentor/Materials';
+import MaterialList from './Mentor/MaterialList';
+import StudyMaterialSuccess from './Mentor/StudyMaterialSuccess';
 import RegistrationSucess from './Pages/Registration/RegistrationSucess';
 
 
@@ -65,6 +68,9 @@ function App() {
         <Route path='/PaymentDetails' element={<PaymentDetails/>}/>
         <Route path='/StudyMaterialsList' element={<StudyMaterialsList/>}/>
         <Route path='/RegistrationSucess' element={<RegistrationSucess/>}/>
+        <Route path='/Materials' element={<Materials/>}/>
+        <Route path='/MaterialList' element={<MaterialList/>}/>
+        <Route path='/StudyMaterialSuccess' element={<StudyMaterialSuccess/>}/>
 
       </Routes>
     </>
