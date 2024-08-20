@@ -37,6 +37,15 @@ import MentorTestSuccess from './Mentor/test/Success';
 import Progress from './Mentor/test/Progress';
 import Information from './Mentor/informations/Information';
 import InformationTypes from './Mentor/informations/InformationTypes';
+import AdminHome from './Admin/AdminHome';
+import IncentivesList from './Admin/IncentivesList';
+import InternshipList from './Admin/InternshipList';
+import MentorDetails from './Admin/MentorDetails';
+import MentorList from './Admin/MentorList';
+import MentorRecords from './Admin/MentorRecords';
+import MoreInformations from './Admin/MoreInformations';
+import MentorSuccess from './Admin/MentorSuccess';
+
 
 function App() {
 
@@ -78,6 +87,15 @@ function App() {
         <Route path='/Progress' element={<Progress/>}/>
         <Route path='/Information' element={<Information/>}/>
         <Route path='/InformationTypes' element={<InformationTypes/>}/>
+        <Route path='/AdminHome' element={<AdminHome/>}/>
+        <Route path='/IncentivesList' element={<IncentivesList/>}/>
+        <Route path='/InternshipList' element={<InternshipList/>}/>
+        <Route path='/MentorDetails' element={<MentorDetails/>}/>
+        <Route path='/MentorList' element={<MentorList/>}/>
+        <Route path='/MentorRecords' element={<MentorRecords/>}/>
+        <Route path='/MoreInformations' element={<MoreInformations/>}/>
+        <Route path='/MentorSuccess' element={<MentorSuccess/>}/>
+
 
       </Routes>
     </>
