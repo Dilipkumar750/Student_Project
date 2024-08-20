@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent from "../../components/HeaderComponent";
 import View from "../../components/View";
 import { useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 
 function InformationDetails() {
     const { title } = useParams();
@@ -46,42 +48,85 @@ function InformationDetails() {
             "Application Process",
             [
                 ["Research",
-                [
-                    "Identify the loan scheme that fits your educational needs.",
-                    "Compare offerings from different banks and financial institutions.",
-                ]],
+                    [
+                        "Identify the loan scheme that fits your educational needs.",
+                        "Compare offerings from different banks and financial institutions.",
+                    ]],
                 ["Prepare Documentation",
-                [
-                    "Academic records, admission letters, and course details.",
-                    "Financial documents, including income proof, tax returns, and collateral (if required).",
-                ]],
+                    [
+                        "Academic records, admission letters, and course details.",
+                        "Financial documents, including income proof, tax returns, and collateral (if required).",
+                    ]],
                 ["Application Submission",
-                [
-                    "Fill out the loan application form provided by the bank or financial institution.",
-                    "Submit the form along with all required documents.",
-                ]],
+                    [
+                        "Fill out the loan application form provided by the bank or financial institution.",
+                        "Submit the form along with all required documents.",
+                    ]],
                 ["Loan Processing",
-                [
-                    "The bank will review the application, perform the necessary due diligence, and may conduct an interview or site visit.",
-                    "Once approved, the loan agreement is signed, and the loan amount is disbursed as per the terms.",
-                ]],
+                    [
+                        "The bank will review the application, perform the necessary due diligence, and may conduct an interview or site visit.",
+                        "Once approved, the loan agreement is signed, and the loan amount is disbursed as per the terms.",
+                    ]],
             ],
         ],
     ];
 
     // Other categories (ensure they are filled with similar structure if needed)
-    const otherCategories = {
-        NGO_Grants: [],
-        CSR: [],
-        Foundation_Grants: [],
-        Internships: [],
-        Skill_Development_Loans: [],
-        Educational_Infrastructure_Loans: [],
-        Scholarships: [],
-        Teacher: [],
-        Infrastructure: [],
-        Technology: [],
-    };
+    const NGO_Grants = []
+    const CSR = []
+    const Foundation_Grants = []
+    const Internships = []
+    const Skill_Development_Loans = []
+    const Educational_Infrastructure_Loans = []
+    const Scholarships = [
+        ["Student Education Loan", ['Aimed at students for pursuing higher education or specific academic programs.']],
+        ['Eligibilty Criteria', ["For Students: Academic performance, financial need, and residency in a rural area are common criteria. Some scholarships might also require a competitive examination.", "For Educators: Eligibility often depends on years of service, current teaching role, and commitment to continue teaching in rural areas.", "For Institutions: Must be located in rural areas, with additional criteria possibly including the number of students served, existing infrastructure, and specific needs."]],
+        [
+            'Application Process',
+            [
+                "Identify Relevant Incentives: Research and identify incentives relevant to your or your institution's needs.",
+                "Check Eligibility: Carefully review the eligibility criteria for each incentive.",
+                "Prepare Application: Gather necessary documents, which may include identification, academic records, financial statements, and project proposals.",
+                "Submit Application: Follow the application instructions, which may involve online submission or sending documents by mail. Ensure to meet the application deadlines.",
+                "Await Decision: After submission, there may be a review period before notification of the outcome."
+            ],
+        ],
+        [
+            "Links",
+            [
+                [
+                    "National Scholarship Portal (NSP): A one-stop solution for students seeking scholarships.",
+                    ["https://scholarships.gov.in/"]
+                ],
+                [
+                    "Rashtriya Madhyamik Shiksha Abhiyan (RMSA) and Sarva Shiksha Abhiyan (SSA): For infrastructural developments and teacher training.",
+                    [
+                        "http://rmsaindia.gov.in/",
+                        "http://ssa.nic.in/"
+                    ]
+                ],
+                [
+                    "Digital India Initiative: For technological access in education.",
+                    [
+                        "https://www.digitalindia.gov.in/"
+                    ]
+                ],
+                [
+                    "Inspire Awards - MANAK: For students exhibiting innovation.",
+                    [
+                        "http://www.inspireawards-dst.gov.in/"
+                    ]
+                ],
+                [
+                    "Teacher Awards: For recognizing the contributions of teachers in rural areas.",
+                    ["Relevant state education department websites and http://mhrd.gov.in/ offer details on teacher awards."]
+                ]
+            ]
+        ]
+    ]
+    const Teacher = []
+    const Infrastructure = []
+    const Technology = []
 
     useEffect(() => {
         switch (title) {
@@ -91,7 +136,9 @@ function InformationDetails() {
             case "Student_Education_Loans":
                 setArray(Student_Education_Loans);
                 break;
-            // Handle other categories if needed
+            case "Scholarships":
+                setArray(Scholarships);
+                break;
             default:
                 setArray([]);
         }
@@ -100,7 +147,7 @@ function InformationDetails() {
     return (
         <>
             <HeaderComponent page="More Information" title="Employment And Fees" />
-            <div>
+            <View>
                 <View>
                     <View style={{ width: "80%", margin: "20px auto" }}>
                         {array.map(([header, points], index) => (
@@ -133,7 +180,7 @@ function InformationDetails() {
                                                     <li key={pointIndex}>
                                                         <strong>{point[0]}</strong>
                                                         <ul>
-                                                            {point.map((subPoint, subPointIndex) => (
+                                                            {point[1].map((subPoint, subPointIndex) => (
                                                                 <li key={subPointIndex}>{subPoint}</li>
                                                             ))}
                                                         </ul>
@@ -150,7 +197,8 @@ function InformationDetails() {
                         ))}
                     </View>
                 </View>
-            </div>
+            <Button style={{width:'100%',backgroundColor:'#DBDC31',color:'black'}}>OK</Button>
+            </View>
         </>
     );
 }
