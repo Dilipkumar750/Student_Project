@@ -10,8 +10,10 @@ import PerformanceImg from "../assets/performance.png";
 import { Image } from "../components/Image";
 import View from "../components/View";
 import SmallBox from "../components/SmallBox";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate=useNavigate();
   return (
     <>
       <HeaderComponent page="Rural Rise" title="Empowering Growth" />
@@ -38,7 +40,7 @@ function Home() {
         }}
       >
         <View style={{height: '80px'}}>
-          <SmallBox image={RequestImg} title="Request Form" />
+          <SmallBox image={RequestImg} title="Request Form" onPress={()=>navigate('/registrationForm')}/>
         </View>
         <View style={{height: '80px'}}>
           <SmallBox image={studyImg} title="Add Study Material" />
@@ -47,7 +49,7 @@ function Home() {
           <SmallBox image={StudentImg} title="Student Record" />
         </View>
         <View style={{height: '80px'}}>
-          <SmallBox image={StudentReqImg} title="Student Request" />
+          <SmallBox image={StudentReqImg} title="Student Request" onPress={()=>navigate('/studentTables')} />
         </View>
         <View style={{height: '80px'}}>
           <SmallBox image={Addtest} title="Add Test" />

@@ -6,13 +6,29 @@ import password from "../assets/password.png";
 import { Image } from "../components/Image";
 import axios from 'axios'
 import { HOST } from '../App';
-
+import { useNavigate } from 'react-router-dom';
 function Login() {
-  const [getData, setGetData]= useState({});
+  const navigate = useNavigate();
+  const [getData, setGetData] = useState({});
+  const [valid, getValid] = useState({});
+  const [err, seterr] = useState(false);
   // const [getData1, setGetData1]= useState({});
-  const postData=()=>{
+  const postData = async() => {
     // const data = {getData,}
-      axios.post(`${HOST}/user/login`,getData).then((res)=>(console.log(res.data)))
+   try {axios.post(`${HOST}/user/login`, getData).then((res)=>{if(res.data.message==='Success'){
+    navigate('/home')
+   }else{
+    seterr(true)
+   }})
+    // console.log('valid', valid)
+    // if (valid === 'Success') {
+    //   navigate('/home')
+    // } else {
+    //   seterr(true)
+    // }
+  }catch(err){
+    console.log(err)
+  }
     // console.log(getData,);
   }
   return (
@@ -20,8 +36,12 @@ function Login() {
       <Row className="w-100">
         <Col md={{ span: 6, offset: 3 }}>
           <View className="text-center mb-6">
-            <h1 className="text-center" style={{ marginBottom: '40%' }}>LOGIN</h1>
+            <h1 className="text-center" style={{ marginBottom: '20%' }}>LOGIN</h1>
+            <br />
+            {err ? <small className='text-danger text-center' ><b style={{ alignItems: 'center', justifyContent: 'center' }}>UserName or Password is Incorrect</b></small> : null}
+            <br />
           </View>
+          <br /><br />
           <Form>
             <Form.Group controlId="formUsername" className="mb-3">
               <InputGroup>
@@ -29,11 +49,11 @@ function Login() {
                   type="email"
                   placeholder="Username"
                   name='email'
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     const name = e.target.name;
                     setGetData({
                       ...getData,
-                      [name]:e.target.value
+                      [name]: e.target.value
                     })
                   }}
                 />
@@ -50,7 +70,7 @@ function Login() {
                   placeholder="Password"
                   name='password'
                   style={{ paddingRight: '40px' }}
-                  onChange={(e)=>{setGetData({...getData,[e.target.name]:e.target.value})}}
+                  onChange={(e) => { setGetData({ ...getData, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={password} alt="password icon" style={{ width: '20px', height: '20px' }} />
@@ -73,7 +93,7 @@ function Login() {
         variant="primary"
         className=" mb-0"
         style={{ backgroundColor: '#DBDC31', borderColor: '#DBDC31', position: 'absolute', bottom: 20, width: '90%' }}
-        onClick={()=>postData()}      >
+        onClick={() => postData()}      >
         LOGIN
       </Button>
     </Container>

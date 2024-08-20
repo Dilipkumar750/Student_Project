@@ -65,7 +65,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/registrationForm' element={<RegistrationForm/>}/>
         <Route path='/studentTables' element={<StudentTables/>}/>
-        <Route path='/studentDetails' element={<StudentDetails/>}/>
+        <Route path='/studentDetails/:id' element={<StudentDetails/>}/>
         <Route path='/studentsRecord' element={<StudentsRecord/>}/>
         <Route path='/studentSucess' element={<StudentSucess/>}/>
         <Route path='/addClass' element={<AddClass/>}/>

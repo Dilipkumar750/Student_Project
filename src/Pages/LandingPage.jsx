@@ -2,8 +2,9 @@ import React from 'react';
 import logo from '../assets/logo.jpg';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Image } from '../components/Image';
-
+import {useNavigate } from 'react-router-dom'
 function LandingPage() {
+  const navigate = useNavigate();
   return (
     <Container fluid className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
       <Row className="text-center">
@@ -25,6 +26,7 @@ function LandingPage() {
               border: 'none' 
             }}
             className="mt-3"
+            onClick={()=>{navigate('/login')}}
           >
             Next
           </Button>

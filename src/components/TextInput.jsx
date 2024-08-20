@@ -1,5 +1,5 @@
 import React from "react";
 
-export const TextInput = (type ,onChangeText,className ,style) =>{
-    return(<input type={type} onChange={onChangeText} className={className} style={style}/>)
+export const TextInput = ({type,value, onChangeText, className, name, style}) => {
+    return <input name={name} value={value} type={type} onChange={onChangeText} className={className} style={style}  />
 }

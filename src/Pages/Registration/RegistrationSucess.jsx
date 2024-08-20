@@ -4,8 +4,10 @@ import View from "../../components/View";
 import success from "../../assets/SUCCESS.png";
 import { Image } from '../../components/Image';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 function RegistrationSuccess() {
+  const navigate = useNavigate();
   return (
     <>
       <HeaderComponent page="Request Form" title="Fill Your Form" />
@@ -45,6 +47,7 @@ function RegistrationSuccess() {
             transform: 'translateX(-50%)',  // Center the button horizontally.
             width: '90%' 
           }}
+          onClick={()=>{navigate('/home')}}
         >
           OK
         </Button>

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
 import View from "../../components/View"; 
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { HOST } from '../../App';
 
 function StudentTables() {
+  const navigate= useNavigate();
+  const [data1,setData1] = useState([])
+  const data = axios.get(`${HOST}/user/userData`).then((res)=>setData1(res.data))
   const students = [
     { id: 1, name: 'Mounika' },
     { id: 2, name: 'Sam' },
@@ -14,7 +20,8 @@ function StudentTables() {
     { id: 6, name: 'Shailesh' },
     { id: 7, name: 'Archana' },
   ];
-
+// const students = data.data
+// console.log(data1)
   return (
     <>
       <HeaderComponent page="Student Request" title="Paid Student List" />
@@ -33,7 +40,7 @@ function StudentTables() {
           <View>Details</View>
         </View>
         
-        {students.map((student) => (
+        {data1.map((student,key) => (
           <View 
             key={student.id} 
             style={{ 
@@ -44,7 +51,7 @@ function StudentTables() {
               borderBottom: '1px solid #ddd'
             }}
           >
-            <View>{student.id}</View>
+            <View>{key+1}</View>
             <View style={{ flexGrow: 1, textAlign: 'center' }}>{student.name}</View>
             <Button 
               variant="primary" 
@@ -56,6 +63,7 @@ function StudentTables() {
                 color: 'black',
                 fontSize: '10px'
               }}
+              onClick={()=>navigate(`/studentDetails/${student.id}`,)}
             >
               VIEW
             </Button>

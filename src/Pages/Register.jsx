@@ -10,11 +10,16 @@ import View from "../components/View"
 import { Image } from '../components/Image';
 import axios from 'axios';
 import { HOST } from '../App';
-
+import { useNavigate } from 'react-router-dom';
 function Register() {
   const [createuser, setCreateUser] = useState({});
+  const [valid ,setValid] = useState({});
+  const navigate = useNavigate();
   const register = ()=>{
-    axios.post(`${HOST}/user/register`,createuser).then((res)=>console.log(res.data))
+    axios.post(`${HOST}/user/register`,createuser).then((res)=>{console.log(res.data); setValid(res.data.message)})
+    if(valid==='Success'){
+      navigate('/login');
+    }
   }
   return (
     <Container className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh', paddingBottom: '0px' }}>
