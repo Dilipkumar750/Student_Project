@@ -5,10 +5,10 @@ import success from "../../assets/SUCCESS.png";
 import { Image } from '../../components/Image';
 import Button from 'react-bootstrap/Button';
 
-function RegistrationSuccess() {
+function StudentSuccess() {
   return (
     <>
-      <HeaderComponent page="Request Form" title="Fill Your Form" />
+      <HeaderComponent page="Student Request" title="Paid student list" />
       <View style={{
         border: "1px solid rgba(0, 0, 0, 0.16)",
         boxShadow: "rgba(0, 0, 0, 0.15) 4px 4px 2.6px", 
@@ -27,29 +27,27 @@ function RegistrationSuccess() {
         }}>
           <Image src={success} alt="Success" style={{ width: "50px", margin: "0 auto" }} />
           <p style={{ textAlign: 'center', fontSize: '16px', color: '#28a745', marginTop: '1rem' }}>
-            Thank you for submitting the form.<br />
-            We will let you know the status in approximately 2 days.
+            Code successfully sent to the <br />given mail id.
           </p>
         </View>
-        
       </View>
       <Button
-          variant="primary"
-          className="mb-0"
-          style={{ 
-            backgroundColor: '#DBDC31', 
-            borderColor: '#DBDC31', 
-            position: 'absolute', 
-            bottom: '20px', 
-            left: '50%', 
-            transform: 'translateX(-50%)',  // Center the button horizontally.
-            width: '90%' 
-          }}
-        >
-          OK
-        </Button>
+        variant="primary"
+        className="mb-0"
+        style={{ 
+          backgroundColor: '#DBDC31', 
+          borderColor: '#DBDC31', 
+          position: 'absolute', 
+          bottom: '20px', 
+          left: '50%', 
+          transform: 'translateX(-50%)',  // Center the button horizontally.
+          width: '90%' 
+        }}
+      >
+        OK
+      </Button>
     </>
-  )
+  );
 }
 
-export default RegistrationSuccess;
+export default StudentSuccess;
