@@ -38,7 +38,7 @@ function RegistrationForm() {
           <TextInput type="text" />
         </View>
         <View style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-          <Button style={{ backgroundColor: '#DBDC31', color: '#000' }}>Submit</Button>
+          <Button href='/RegistrationSucess' style={{ backgroundColor: '#DBDC31', color: '#000' }}>Submit</Button>
         </View>
       </View>
     </>

@@ -9,6 +9,7 @@ import RegistrationForm from './Pages/Registration/RegistrationForm';
 import StudentTables from './Pages/Students/StudentTables';
 import StudentDetails from './Pages/Students/StudentDetails';
 import StudentsRecord from './Pages/Students/StudentsRecord';
+import StudentSucess from './Pages/Students/StudentSucess';
 import AddClass from './Pages/StudyMaterials/AddClass';
 import BooksPdf from './Pages/StudyMaterials/BooksPdf';
 import VideosPdf from './Pages/StudyMaterials/VideosPdf';
@@ -28,9 +29,6 @@ import Payment from './Mentor/Payment';
 import PaymentSuccess from './Mentor/PaymentSuccess';
 import PaymentDetails from './Mentor/PaymentDetails';
 import StudyMaterialsList from './Mentor/StudyMaterialsList';
-import Materials from './Mentor/Materials';
-import MaterialList from './Mentor/MaterialList';
-import StudyMaterialSuccess from './Mentor/StudyMaterialSuccess';
 import RegistrationSucess from './Pages/Registration/RegistrationSucess';
 
 
@@ -48,6 +46,7 @@ function App() {
         <Route path='/studentTables' element={<StudentTables/>}/>
         <Route path='/studentDetails' element={<StudentDetails/>}/>
         <Route path='/studentsRecord' element={<StudentsRecord/>}/>
+        <Route path='/studentSucess' element={<StudentSucess/>}/>
         <Route path='/addClass' element={<AddClass/>}/>
         <Route path='/booksPdf' element={<BooksPdf/>}/>
         <Route path='/VideosPdf' element={<VideosPdf/>}/>
@@ -68,9 +67,6 @@ function App() {
         <Route path='/PaymentDetails' element={<PaymentDetails/>}/>
         <Route path='/StudyMaterialsList' element={<StudyMaterialsList/>}/>
         <Route path='/RegistrationSucess' element={<RegistrationSucess/>}/>
-        <Route path='/Materials' element={<Materials/>}/>
-        <Route path='/MaterialList' element={<MaterialList/>}/>
-        <Route path='/StudyMaterialSuccess' element={<StudyMaterialSuccess/>}/>
 
       </Routes>
     </>
