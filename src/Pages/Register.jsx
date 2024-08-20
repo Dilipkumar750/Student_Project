@@ -6,15 +6,16 @@ import classIcon from "../assets/class.png";
 import department from "../assets/department.png";
 import telephone from "../assets/telephone.png";
 import email from "../assets/mail.png";
+import View from "../components/View"
 
 function Register() {
   return (
     <Container className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh', paddingBottom: '0px' }}>
       <Row className="w-100">
         <Col md={{ span: 6, offset: 3 }}>
-          <div className="text-center mb-4">
+          <View className="text-center mb-4">
             <h1>REGISTER</h1>
-          </div>
+          </View>
           <Form>
             {/* Name Field */}
             <Form.Group controlId="formName" className="mb-3">
@@ -116,9 +117,9 @@ function Register() {
               </InputGroup>
             </Form.Group>
 
-            <div className="text-center mt-5">
+            <View className="text-center mt-5">
               <p>Already Have An Account? <a href="/login">Login</a></p>
-            </div>
+            </View>
           </Form>
         </Col>
       </Row>
