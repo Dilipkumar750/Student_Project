@@ -55,6 +55,7 @@ import TestCreate from './Pages/Test/TestCreate';
 import AdminInfoTypes from './Admin/MoreInformations/AdminInfoTypes';
 import AdminAddJob from './Admin/MoreInformations/AdminAddJob';
 import StudentRequest from './Admin/MoreInformations/StudentRequest';
+import MentorRequest from './Admin/MoreInformations/MentorRequest';
 export const HOST='http://localhost:8080/rural_rise' 
 
 
@@ -66,7 +67,7 @@ function App() {
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/home' element={<Home/>}/>
+        <Route path='/home' element={<Home/>}/>  {/* student home */}
         <Route path='/registrationForm' element={<RegistrationForm/>}/>
         <Route path='/studentTables' element={<StudentTables/>}/>
         <Route path='/studentDetails/:id' element={<StudentDetails/>}/>
@@ -84,7 +85,7 @@ function App() {
         <Route path='/TermsAndConditions' element={<TermsAndConditions/>}/>
         <Route path='/Profile' element={<Profile/>}/>
         <Route path='/EditProfile' element={<EditProfile/>}/>
-        <Route path='/MentorHome' element={<MentorHome/>}/>
+        <Route path='/MentorHome' element={<MentorHome/>}/>  {/* mentor home */}
         <Route path='/MentorAccess' element={<MentorAccess/>}/>
         <Route path='/MentorRegistrationForm' element={<MentorRegistrationForm/>}/>
         <Route path='/Payment' element={<Payment/>}/>
@@ -98,7 +99,7 @@ function App() {
         <Route path='/Progress' element={<Progress/>}/>
         <Route path='/Information' element={<Information/>}/>
         <Route path='/InformationTypes' element={<InformationTypes/>}/>
-        <Route path='/AdminHome' element={<AdminHome/>}/>
+       <Route path='/AdminHome' element={<AdminHome/>}/>   {/* admin home */}
         <Route path='/IncentivesList' element={<IncentivesList/>}/>
         <Route path='/InternshipList' element={<InternshipList/>}/>
         <Route path='/MentorDetails' element={<MentorDetails/>}/>
@@ -118,6 +119,7 @@ function App() {
         <Route path='/AdminInfoTypes/:title' element={<AdminInfoTypes/>}/>
         <Route path='/AdminAddJob' element={<AdminAddJob/>}/>
         <Route path='/StudentRequest' element={<StudentRequest/>}/>
+        <Route path='/MentorRequest' element={<MentorRequest/>}/>
       </Routes>
     </>
   )

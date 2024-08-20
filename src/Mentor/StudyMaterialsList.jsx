@@ -29,17 +29,17 @@ function StudyMaterialsList() {
           </List>
           <List>
             <Image src={openBookImg} alt="open book" style={{width:'80%'}} />
-            <span>Class-1st</span>
+            <span>Class-2nd</span>
             <HiChevronRight style={{height:'100%',width:'100%'}} />
           </List>
           <List>
             <Image src={openBookImg} alt="open book" style={{width:'80%'}} />
-            <span>Class-1st</span>
+            <span>Class-3rd</span>
             <HiChevronRight style={{height:'100%',width:'100%'}} />
           </List>
           <List>
             <Image src={openBookImg} alt="open book" style={{width:'80%'}} />
-            <span>Class-1st</span>
+            <span>Class-4th</span>
             <HiChevronRight style={{height:'100%',width:'100%'}} />
           </List>
         </View>

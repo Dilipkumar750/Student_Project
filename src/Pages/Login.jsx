@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Container, Row, Col, InputGroup, Button } from 'react-bootstrap';
+import Cookies from 'js-cookie';
 import user from "../assets/user1.jpg";
 import View from "../components/View";
 import password from "../assets/password.png";
@@ -13,24 +14,34 @@ function Login() {
   const [valid, getValid] = useState({});
   const [err, seterr] = useState(false);
   // const [getData1, setGetData1]= useState({});
-  const postData = async() => {
-    // const data = {getData,}
-   try {axios.post(`${HOST}/user/login`, getData).then((res)=>{if(res.data.message==='Success'){
-    navigate('/home')
-   }else{
-    seterr(true)
-   }})
-    // console.log('valid', valid)
-    // if (valid === 'Success') {
-    //   navigate('/home')
-    // } else {
-    //   seterr(true)
-    // }
-  }catch(err){
-    console.log(err)
-  }
-    // console.log(getData,);
-  }
+  const postData = async () => {
+    try {
+      const response = await axios.post(`${HOST}/user/login`, getData, {
+        withCredentials: true,
+      });
+  
+      if (response.data.message === 'Success') {
+        const role = response.data.role;
+  
+        if (role === 'student') {
+          navigate('/home');
+        } else if (role === 'mentor') {
+          navigate('/MentorHome');
+        } else if (role === 'admin') {
+          navigate('/AdminHome');
+        } else {
+          seterr(true);
+        }
+      } else {
+        seterr(true);
+      }
+    } catch (err) {
+      console.log(err);
+      seterr(true);
+    }
+  };
+  
+  
   return (
     <Container className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh', paddingBottom: '0px' }}>
       <Row className="w-100">
