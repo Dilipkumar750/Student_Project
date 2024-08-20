@@ -24,6 +24,10 @@ import EditProfile from './Pages/Profile/EditProfile';
 import MentorHome from './Mentor/MentorHome';
 import MentorAccess from './Mentor/MentorAccess';
 import MentorRegistrationForm from './Mentor/RegistrationForm';
+import Payment from './Mentor/Payment';
+import PaymentSuccess from './Mentor/PaymentSuccess';
+import PaymentDetails from './Mentor/PaymentDetails';
+import StudyMaterialsList from './Mentor/StudyMaterialsList';
 
 
 function App() {
@@ -54,6 +58,10 @@ function App() {
         <Route path='/MentorHome' element={<MentorHome/>}/>
         <Route path='/MentorAccess' element={<MentorAccess/>}/>
         <Route path='/MentorRegistrationForm' element={<MentorRegistrationForm/>}/>
+        <Route path='/Payment' element={<Payment/>}/>
+        <Route path='/PaymentSuccess' element={<PaymentSuccess/>}/>
+        <Route path='/PaymentDetails' element={<PaymentDetails/>}/>
+        <Route path='/StudyMaterialsList' element={<StudyMaterialsList/>}/>
       </Routes>
     </>
   )
