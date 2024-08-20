@@ -9,7 +9,7 @@ function Progress() {
     return (
         <>
             <HeaderComponent page="Progress Chart" title="Check Progress" />
-            <div style={{display:'grid',justifyContent:"space-around",height:'80vh',padding:'1rem'}}>
+            <View style={{display:'grid',justifyContent:"space-around",height:'80vh',padding:'1rem'}}>
                     <Table responsive style={{border:'1px solid black'}}>
                         <thead>
                             <tr>
@@ -26,14 +26,14 @@ function Progress() {
                             </tr>
                         </tbody>
                     </Table>
-                <div>
+                <View>
                     <h3>Progress Bar:</h3>
                     <ProgressBar now={60} label={`60%`} />
-                </div>
-                <div style={{border:'1px solid black',padding:'1rem',height:'fit-content'}}>
+                </View>
+                <View style={{border:'1px solid black',padding:'1rem',height:'fit-content'}}>
                     <p>As per the above result, your progress is 70%. Kindly study well for next test.</p>
-                </div>
-            </div>
+                </View>
+            </View>
                 <Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button>
 
         </>

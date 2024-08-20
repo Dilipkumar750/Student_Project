@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
+import View from "../components/View"; 
 
 function StudentDetails() {
   const [email, setEmail] = useState('');
@@ -46,7 +47,7 @@ function StudentDetails() {
                   onChange={(e) => setIdNo(e.target.value)}
                 />
               </Form.Group>
-              <div className="text-center mt-3">
+              <View className="text-center mt-3">
                 <Button 
                   variant="primary" 
                   type="submit"
@@ -54,7 +55,7 @@ function StudentDetails() {
                 >
                   SEND
                 </Button>
-              </div>
+              </View>
             </Form>
           </Card.Body>
         </Card>

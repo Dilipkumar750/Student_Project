@@ -7,6 +7,7 @@ import department from "../assets/department.png";
 import telephone from "../assets/telephone.png";
 import email from "../assets/mail.png";
 import View from "../components/View"
+import { Image } from '../../components/Image';
 
 function Register() {
   return (
@@ -26,7 +27,7 @@ function Register() {
                   aria-label="Name"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={user} alt="Name icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={user} alt="Name icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -40,7 +41,7 @@ function Register() {
                   aria-label="Email"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={email} alt="Email icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={email} alt="Email icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -54,7 +55,7 @@ function Register() {
                   aria-label="Contact Number"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={telephone} alt="Contact Number icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={telephone} alt="Contact Number icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -68,7 +69,7 @@ function Register() {
                   aria-label="Class"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={classIcon} alt="Class icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={classIcon} alt="Class icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -82,7 +83,7 @@ function Register() {
                   aria-label="Department"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={department} alt="Department icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={department} alt="Department icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -97,7 +98,7 @@ function Register() {
                   aria-label="Password"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={password} alt="Password icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={password} alt="Password icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
@@ -112,7 +113,7 @@ function Register() {
                   aria-label="Confirm Password"
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
-                  <img src={password} alt="Confirm Password icon" style={{ width: '20px', height: '20px' }} />
+                  <Image src={password} alt="Confirm Password icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>

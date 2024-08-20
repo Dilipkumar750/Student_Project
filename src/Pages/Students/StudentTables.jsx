@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
+import View from "../components/View"; 
 
 function StudentTables() {
   const students = [
@@ -17,8 +18,8 @@ function StudentTables() {
   return (
     <>
       <HeaderComponent page="Student Request" title="Paid Student List" />
-      <div style={{ width: '95%', margin: '0 auto', marginTop: '10%', borderRadius: '10px', overflow: 'hidden' }}>
-        <div style={{ 
+      <View style={{ width: '95%', margin: '0 auto', marginTop: '10%', borderRadius: '10px', overflow: 'hidden' }}>
+        <View style={{ 
           backgroundColor: '#DBDC31', 
           padding: '10px 20px',
           display: 'flex', 
@@ -27,13 +28,13 @@ function StudentTables() {
           borderBottom: '1px solid #ddd',
           fontWeight: 'bold',
         }}>
-          <div>S. No</div>
-          <div style={{ flexGrow: 1, textAlign: 'center' }}>Student Name</div>
-          <div>Details</div>
-        </div>
+          <View>S. No</View>
+          <View style={{ flexGrow: 1, textAlign: 'center' }}>Student Name</View>
+          <View>Details</View>
+        </View>
         
         {students.map((student) => (
-          <div 
+          <View 
             key={student.id} 
             style={{ 
               display: 'flex', 
@@ -43,24 +44,24 @@ function StudentTables() {
               borderBottom: '1px solid #ddd'
             }}
           >
-            <div>{student.id}</div>
-            <div style={{ flexGrow: 1, textAlign: 'center' }}>{student.name}</div>
+            <View>{student.id}</View>
+            <View style={{ flexGrow: 1, textAlign: 'center' }}>{student.name}</View>
             <Button 
               variant="primary" 
               style={{ 
                 marginLeft: 'auto', 
                 backgroundColor: '#DBDC31', 
                 height: '30px', 
-                width: '100px', 
+                width: '20%', 
                 color: 'black',
                 fontSize: '10px'
               }}
             >
               VIEW
             </Button>
-          </div>
+          </View>
         ))}
-      </div>
+      </View>
     </>
   );
 }

@@ -4,12 +4,13 @@ import { Image } from "../components/Image";
 import View from "../components/View";
 import { Button } from "react-bootstrap";
 import importImg from "../assets/import.png";
+import View from "../components/View"; 
 
 function PaymentDetails() {
     return (
         <>
             <HeaderComponent page="Mentor Access" title="Book Your Mentor" />
-            <div
+            <View
                 style={{
                     border: "1px solid black",
                     borderRadius: "10px",
@@ -17,13 +18,13 @@ function PaymentDetails() {
                     margin: "1rem",
                     height:'80vh'
                 }}>
-                <div style={{ display: 'grid', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                    <div>
+                <View style={{ display: 'grid', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                    <View>
                         <h3>Payment Details</h3>
                         <Image src={tick} style={{ width: '100px' }} />
                         <h4>Payment Total</h4>
-                    </div>
-                </div>
+                    </View>
+                </View>
                 <View
                     style={{
                         border: "1px solid black",
@@ -65,7 +66,7 @@ function PaymentDetails() {
                 </View>
                 <Button style={{width:'100%',borderRadius:"25px" , backgroundColor:'white',border:'1px solid black',color:'black'}}> <Image src={importImg}/> Get PDF Receipt</Button>
                 <Button style={{width:'100%',borderRadius:"25px" , backgroundColor:'#DBDC31',border:'1px solid black',color:'black',marginTop:'1rem'}}>Back to Homepage</Button>
-            </div>
+            </View>
         </>
     );
 }

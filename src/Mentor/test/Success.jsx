@@ -11,8 +11,8 @@ function Success() {
         <>
             <HeaderComponent page="Progress Chart" title="Check Progress" />
 
-            <div style={{ height: '70vh', display: 'grid', justifyItems: 'center', alignItems: 'center' }}>
-                <div>
+            <View style={{ height: '70vh', display: 'grid', justifyItems: 'center', alignItems: 'center' }}>
+                <View>
                     <View style={{
                         border: "1px solid rgba(0, 0, 0, 0.16)",
                         boxShadow: "rgba(0, 0, 0, 0.15) 4px 4px 2.6px",
@@ -35,8 +35,8 @@ function Success() {
                         </View>
                     </View>
                     <a href=""><p style={{ textAlign: 'center'}}>Click here for progress checking</p></a>
-                </div>
-            </div>
+                </View>
+            </View>
         </>
     )
 }
