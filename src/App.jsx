@@ -46,6 +46,10 @@ import MentorRecords from './Admin/MentorRecords';
 import MoreInformations from './Admin/MoreInformations';
 import MentorSuccess from './Admin/MentorSuccess';
 import InformationDetails from './Mentor/informations/InformationDetails';
+import JobApply from './Mentor/jobApply/JobApply';
+import JobDiscription from './Mentor/jobApply/JobDiscription';
+import ApplyForm from './Mentor/jobApply/ApplyForm';
+import ApplySuccess from './Mentor/jobApply/ApplySuccess';
 export const HOST='http://localhost:8080/rural_rise' 
 
 
@@ -100,6 +104,10 @@ function App() {
         <Route path='/InformationTypes/:title' element={<InformationTypes/>}/>
         <Route path='/MentorTestSuccess' element={<MentorTestSuccess/>}/>
         <Route path='/InformationDetails/:title' element={<InformationDetails/>}/>
+        <Route path='/JobApply' element={<JobApply/>}/>
+        <Route path='/JobDiscription/:id' element={<JobDiscription/>}/>
+        <Route path='/ApplyForm' element={<ApplyForm/>}/>
+        <Route path='/ApplySuccess' element={<ApplySuccess/>}/>
 
       </Routes>
     </>
