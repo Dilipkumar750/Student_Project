@@ -46,6 +46,8 @@ import MentorRecords from './Admin/MentorRecords';
 import MoreInformations from './Admin/MoreInformations';
 import MentorSuccess from './Admin/MentorSuccess';
 import InformationDetails from './Mentor/informations/InformationDetails';
+export const HOST='http://localhost:8080/rural_rise' 
+
 
 function App() {
 

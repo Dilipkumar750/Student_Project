@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Container, Row, Col, InputGroup, Button } from 'react-bootstrap';
 import user from "../assets/user1.jpg";
 import password from "../assets/password.png";
@@ -8,8 +8,14 @@ import telephone from "../assets/telephone.png";
 import email from "../assets/mail.png";
 import View from "../components/View"
 import { Image } from '../components/Image';
+import axios from 'axios';
+import { HOST } from '../App';
 
 function Register() {
+  const [createuser, setCreateUser] = useState({});
+  const register = ()=>{
+    axios.post(`${HOST}/user/register`,createuser).then((res)=>console.log(res.data))
+  }
   return (
     <Container className="d-flex justify-content-center align-items-center flex-column" style={{ height: '100vh', paddingBottom: '0px' }}>
       <Row className="w-100">
@@ -25,6 +31,8 @@ function Register() {
                   type="text"
                   placeholder="Name"
                   aria-label="Name"
+                  name='name'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={user} alt="Name icon" style={{ width: '20px', height: '20px' }} />
@@ -39,13 +47,28 @@ function Register() {
                   type="email"
                   placeholder="Email"
                   aria-label="Email"
+                  name='email'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={email} alt="Email icon" style={{ width: '20px', height: '20px' }} />
                 </InputGroup.Text>
               </InputGroup>
             </Form.Group>
-
+            <Form.Group controlId="forrole" className="mb-3">
+              <InputGroup>
+                <Form.Select
+                  aria-label="Role"
+                  name="role"
+                  onChange={(e) => setCreateUser({ ...createuser, [e.target.name]: e.target.value })}
+                >
+                  <option value="" selected>Select Role</option>
+                  <option value="student">Student</option>
+                  <option value="mentor">Mentor</option>
+                  <option value="admin">Admin</option>
+                </Form.Select>
+              </InputGroup>
+            </Form.Group>
             {/* Contact Number Field */}
             <Form.Group controlId="formContactNumber" className="mb-3">
               <InputGroup>
@@ -53,6 +76,9 @@ function Register() {
                   type="text"
                   placeholder="Contact Number"
                   aria-label="Contact Number"
+                  name='contact_number'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
+
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={telephone} alt="Contact Number icon" style={{ width: '20px', height: '20px' }} />
@@ -67,6 +93,8 @@ function Register() {
                   type="text"
                   placeholder="Class"
                   aria-label="Class"
+                  name='classes'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={classIcon} alt="Class icon" style={{ width: '20px', height: '20px' }} />
@@ -81,6 +109,8 @@ function Register() {
                   type="text"
                   placeholder="Department"
                   aria-label="Department"
+                  name='department'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={department} alt="Department icon" style={{ width: '20px', height: '20px' }} />
@@ -96,6 +126,8 @@ function Register() {
                   placeholder="Password"
                   style={{ paddingRight: '40px' }}
                   aria-label="Password"
+                  name='password'
+                  onChange={(e) => { setCreateUser({ ...createuser, [e.target.name]: e.target.value }) }}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
                   <Image src={password} alt="Password icon" style={{ width: '20px', height: '20px' }} />
@@ -128,6 +160,7 @@ function Register() {
         variant="primary"
         className="mt-4"
         style={{ backgroundColor: '#DBDC31', borderColor: '#DBDC31', width: '90%' }}
+        onClick={()=>{register()}}
       >
         REGISTER
       </Button>
