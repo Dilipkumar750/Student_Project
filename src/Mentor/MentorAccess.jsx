@@ -4,6 +4,7 @@ import { Image } from "../components/Image";
 import HeaderComponent from "../components/HeaderComponent";
 import user from '../assets/user.jpg'
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function MentorAccess() {
@@ -27,8 +28,8 @@ function MentorAccess() {
             <p style={{margin:0,fontSize:'12px'}}>Class: 1st to 5th</p>
             <p style={{margin:0,fontSize:'12px'}}>Fees: 500</p>
           </View>
-            <Button style={{padding:'5px', width:'80%',fontSize:'12px' }}>Register</Button>
-            <Button style={{padding:'0', width:'60%',fontSize:'10px' }}>Connect to Whatsapp</Button>
+            <Link to='/MentorRegistrationForm'><Button style={{padding:'5px', width:'80%',fontSize:'12px',backgroundColor:'#DBDC31' }}>Register</Button></Link>
+            <Button style={{padding:'0', width:'60%',fontSize:'10px',backgroundColor:'#DBDC31' }}>Connect to Whatsapp</Button>
         </View>
       </View>
       <View style={{ padding: '1rem' }}>
@@ -48,8 +49,8 @@ function MentorAccess() {
             <p style={{margin:0,fontSize:'12px'}}>Class: 1st to 5th</p>
             <p style={{margin:0,fontSize:'12px'}}>Fees: 500</p>
           </View>
-            <Button style={{padding:'5px', width:'80%',fontSize:'12px' }}>Register</Button>
-            <Button style={{padding:'0', width:'60%',fontSize:'10px' }}>Connect to Whatsapp</Button>
+            <Link to='/MentorRegistrationForm'><Button style={{padding:'5px', width:'80%',fontSize:'12px',backgroundColor:'#DBDC31' }}>Register</Button></Link>
+            <Button style={{padding:'0', width:'60%',fontSize:'10px',backgroundColor:'#DBDC31' }}>Connect to Whatsapp</Button>
         </View>
       </View>
     </>

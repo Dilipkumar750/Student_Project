@@ -6,6 +6,7 @@ import { Image } from '../../components/Image';
 import View from '../../components/View';
 import success from "../../assets/SUCCESS.png";
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function ApplySuccess() {
@@ -38,7 +39,7 @@ function ApplySuccess() {
                     </View>
                 </View>
             </View>
-            <Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button>
+            <Link to='/MentorHome'><Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button></Link>
 
         </>
     )

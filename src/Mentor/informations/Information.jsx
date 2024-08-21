@@ -28,10 +28,6 @@ function Information() {
       image: IncentivesImg,
     },
     {
-      title: "Jobs",
-      image: hiringImg,
-    },
-    {
       title: "Internships",
       image: internImg,
     },
@@ -47,6 +43,11 @@ function Information() {
             <Link to={`/InformationTypes/${inf.title}`}><HiChevronRight style={{ height: "100%", width: "100%" }} /></Link>
           </List>
         ))}
+          <List>
+            <Image src={hiringImg} alt="open book" style={{ width: "80%" }} />
+            <span>Job</span>
+            <Link to={`/JobApply`}><HiChevronRight style={{ height: "100%", width: "100%" }} /></Link>
+          </List>
       </View>
     </>
   );

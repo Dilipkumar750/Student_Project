@@ -10,6 +10,8 @@ import billImg from "../assets/IMG-20240819-WA0024.jpg";
 import { Image } from "../components/Image";
 import View from "../components/View";
 import SmallBox from "../components/SmallBox";
+import { Link } from "react-router-dom";
+
 
 function MentorHome() {
   return (
@@ -37,24 +39,36 @@ function MentorHome() {
           padding: "0 0.6rem",
         }}
       >
-        <View>
-          <SmallBox image={mentorImg} title="Mentor Access" />
-        </View>
-        <View>
-          <SmallBox image={studyImg} title="Study Material" />
-        </View>
-        <View>
-          <SmallBox image={chartImg} title="Progress Chart" />
-        </View>
-        <View>
-          <SmallBox image={AssessmentImg} title="Assessment" />
-        </View>
-        <View>
-          <SmallBox image={infoImg} title="More Information" />
-        </View>
-        <View>
-          <SmallBox image={billImg} title="Payment Status" />
-        </View>
+        <Link to='/MentorAccess'>
+          <View>
+            <SmallBox image={mentorImg} title="Mentor Access" />
+          </View>
+        </Link>
+        <Link to="/StudyMaterialsList">
+          <View>
+            <SmallBox image={studyImg} title="Study Material" />
+          </View>
+        </Link>
+        <Link to='/Progress'>
+          <View>
+            <SmallBox image={chartImg} title="Progress Chart" />
+          </View>
+        </Link>
+        <Link to='/TestList'>
+          <View>
+            <SmallBox image={AssessmentImg} title="Assessment" />
+          </View>
+        </Link>
+        <Link to='/Information'>
+          <View>
+            <SmallBox image={infoImg} title="More Information" />
+          </View>
+        </Link>
+        <Link to='/PaymentDetails'>
+          <View>
+            <SmallBox image={billImg} title="Payment Status" />
+          </View>
+        </Link>
       </View>
       <View style={{
         border: "1px solid rgba(0, 0, 0, 0.16)",

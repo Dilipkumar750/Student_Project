@@ -43,7 +43,7 @@ function Home() {
           <SmallBox image={RequestImg} title="Request Form" onPress={()=>navigate('/registrationForm')}/>
         </View>
         <View style={{height: '80px'}}>
-          <SmallBox image={studyImg} title="Add Study Material" />
+          <SmallBox image={studyImg} title="Add Study Material" onPress={()=>navigate('/addClass')} />
         </View>
         <View style={{height: '80px'}}>
           <SmallBox image={StudentImg} title="Student Record" />
@@ -52,7 +52,7 @@ function Home() {
           <SmallBox image={StudentReqImg} title="Student Request" onPress={()=>navigate('/studentTables')} />
         </View>
         <View style={{height: '80px'}}>
-          <SmallBox image={Addtest} title="Add Test" />
+          <SmallBox image={Addtest} title="Add Test" onPress={()=>navigate('/TestHome')} />
         </View>
         <View style={{height: '80px'}}>
           <SmallBox image={PerformanceImg} title="Student Performance" />

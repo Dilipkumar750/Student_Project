@@ -4,6 +4,7 @@ import View from "../../components/View";
 import { Button } from "react-bootstrap";
 import Table from 'react-bootstrap/Table';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { Link } from "react-router-dom";
 
 function Progress() {
     return (
@@ -34,7 +35,7 @@ function Progress() {
                     <p>As per the above result, your progress is 70%. Kindly study well for next test.</p>
                 </View>
             </View>
-                <Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button>
+                <Link to='/MentorHome'><Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button></Link>
 
         </>
     )

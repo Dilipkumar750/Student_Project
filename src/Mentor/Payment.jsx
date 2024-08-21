@@ -10,6 +10,7 @@ import visa from "../assets/visa.png";
 import bank from "../assets/bank.png";
 import { BsCreditCardFill } from "react-icons/bs";
 import { Image } from "../components/Image";
+import { Link } from "react-router-dom";
 
 function Payment() {
   return (
@@ -65,26 +66,28 @@ function Payment() {
         <p style={{ fontSize: "12px", fontWeight: "600", color: "#89AA04" }}>
           Pay directly with your favourite UPI apps{" "}
         </p>
-        <View
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr",
-            gap: "1rem",
-          }}
-        >
-          <View style={{ height: "65px" }}>
-            <SmallBox image={gpay} title="GPay" />
+        <Link to='/PaymentSuccess'>
+          <View
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr",
+              gap: "1rem",
+            }}
+          >
+            <View style={{ height: "65px" }}>
+              <SmallBox image={gpay} title="GPay" />
+            </View>
+            <View style={{ height: "65px" }}>
+              <SmallBox image={phonepe} title="PhonePe" />
+            </View>
+            <View style={{ height: "65px" }}>
+              <SmallBox image={vector} title="BHIM" />
+            </View>
+            <View style={{ height: "65px" }}>
+              <SmallBox image={paytm} title="Paytm" />
+            </View>
           </View>
-          <View style={{ height: "65px" }}>
-            <SmallBox image={phonepe} title="PhonePe" />
-          </View>
-          <View style={{ height: "65px" }}>
-            <SmallBox image={vector} title="BHIM" />
-          </View>
-          <View style={{ height: "65px" }}>
-            <SmallBox image={paytm} title="Paytm" />
-          </View>
-        </View>
+        </Link>
       </View>
       <View
         style={{
@@ -97,21 +100,23 @@ function Payment() {
         <p style={{ fontSize: "12px", fontWeight: "600", color: "#89AA04" }}>
           <BsCreditCardFill /> Debit / Credit Card
         </p>
-        <View
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "3rem",
-            padding: "0 2rem",
-          }}
-        >
-          <View style={{ height: "70px" }}>
-            <SmallBox image={mastercard} title="Mastercard" />
+        <Link to='/PaymentSuccess'>
+          <View
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "3rem",
+              padding: "0 2rem",
+            }}
+          >
+            <View style={{ height: "70px" }}>
+              <SmallBox image={mastercard} title="Mastercard" />
+            </View>
+            <View style={{ height: "70px" }}>
+              <SmallBox image={visa} title="Visa" />
+            </View>
           </View>
-          <View style={{ height: "70px" }}>
-            <SmallBox image={visa} title="Visa" />
-          </View>
-        </View>
+        </Link>
       </View>
       <View
         style={{

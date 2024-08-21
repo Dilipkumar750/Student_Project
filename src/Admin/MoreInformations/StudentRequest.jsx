@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from '../../components/HeaderComponent';
 import View from "../../components/View"; 
+import { Link } from 'react-router-dom';
+
 
 function StudentRequest() {
   const students = [
@@ -17,7 +19,7 @@ function StudentRequest() {
 
   return (
     <>
-      <HeaderComponent page="Student Request" title="Student request" />
+      <HeaderComponent page="Request List" title="Student request" />
       <View style={{ width: '95%', margin: '0 auto', marginTop: '10%', borderRadius: '10px', overflow: 'hidden' }}>
         <View style={{ 
           backgroundColor: '#DBDC31', 
@@ -46,19 +48,21 @@ function StudentRequest() {
           >
             <View>{student.id}</View>
             <View style={{ flexGrow: 1, textAlign: 'center' }}>{student.name}</View>
-            <Button 
-              variant="primary" 
-              style={{ 
-                marginLeft: 'auto', 
-                backgroundColor: '#DBDC31', 
-                height: '30px', 
-                width: '20%', 
-                color: 'black',
-                fontSize: '10px'
-              }}
-            >
-              VIEW
-            </Button>
+            <Link to='/MentorRequest'>
+              <Button 
+                variant="primary" 
+                style={{ 
+                  marginLeft: 'auto', 
+                  backgroundColor: '#DBDC31', 
+                  height: '30px', 
+                  width: '100%', 
+                  color: 'black',
+                  fontSize: '10px'
+                }}
+              >
+                VIEW
+              </Button>
+            </Link>
           </View>
         ))}
       </View>

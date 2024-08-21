@@ -4,6 +4,8 @@ import mentorImage from '../../assets/mentorImage.png';
 import { Image } from '../../components/Image';
 import Button from 'react-bootstrap/Button';
 import View from "../../components/View"; 
+import { Link } from 'react-router-dom';
+
 
 function MentorRequest() {
   const students = [
@@ -11,8 +13,7 @@ function MentorRequest() {
     { id: 'Email', name: 'john12@gmail.com' },
     { id: 'Phone_no', name: '7896541302' },
     { id: 'Qualification', name: 'M.Sc Maths' },
-    { id: 'Class', name: '1st to 5th' },
-    { id: 'Fees', name: 'Rs. 500' },
+    { id: 'Job Applied', name: 'Tutor Job' },
   ];
 
   return (
@@ -56,30 +57,33 @@ function MentorRequest() {
           width: '90%',
         }}
       >
-        <Button
-          variant="primary"
-          href='/Mentorsuccess'
-          style={{ 
-            backgroundColor: '#DBDC31', 
-            borderColor: '#DBDC31', 
-            width: '48%', 
-            textAlign: 'center' 
-          }}
-        >
-          Discard
-        </Button>
-        <Button
-          variant="primary"
-          href='/Mentorsuccess'
-          style={{ 
-            backgroundColor: '#DBDC31', 
-            borderColor: '#DBDC31', 
-            width: '48%', 
-            textAlign: 'center' 
-          }}
-        >
-          Approve
-        </Button>
+        <Link to='/MentorSuccess/reject'>
+          <Button
+            variant="primary"
+            
+            style={{ 
+              backgroundColor: '#DBDC31', 
+              borderColor: '#DBDC31', 
+              width: '', 
+              textAlign: 'center' 
+            }}
+          >
+            Discard
+          </Button>
+        </Link>
+        <Link to='/MentorSuccess/success'>
+          <Button
+            variant="primary"
+            
+            style={{ 
+              backgroundColor: '#DBDC31', 
+              borderColor: '#DBDC31', 
+              textAlign: 'center' 
+            }}
+          >
+            Approve
+          </Button>
+        </Link>
       </View>
     </>
   );

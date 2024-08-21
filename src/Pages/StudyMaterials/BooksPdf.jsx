@@ -12,18 +12,35 @@ import axios from 'axios';
 
 
 function MyVerticallyCenteredModal(props) {
-  const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [error, setError] = useState('');
 
+  const handleAddClick = async () => {
+    if (!selectedFile) {
+      setError('Please select a file.');
+      return;
+    }
+    if (!selectedFile.type.startsWith('video/')) {
+      setError('Only video files are allowed.');
+      return;
+    }
 
-
-  const handleAddClick = () => {
+    setError('');
     const formData = new FormData();
     formData.append('file', selectedFile);
-    t(`${HOST}/upload/document`, formData)
-    if (selectedFile) {
-      console.log('Selected file:', formData);
+
+    try {
+      await axios.post(`${HOST}/upload/video`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log('File uploaded successfully');
+      props.onHide(); // Close the modal after successful upload
+    } catch (err) {
+      console.error('Error uploading file:', err);
+      setError('Error uploading file. Please try again.');
     }
-    props.onHide(); // Close the modal
   };
 
   return (
@@ -35,13 +52,19 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Uploads
+          Upload Video
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Default file input example</Form.Label>
-          <Form.Control type="file" name='file' onChange={(e) => { console.log(e.target.files[0]); setSelectedFile(e.target.files[0]) }} />
+          <Form.Label>Select Video</Form.Label>
+          <Form.Control
+            type="file"
+            name="file"
+            accept="video/*" // Restrict file selection to video files
+            onChange={(e) => setSelectedFile(e.target.files[0])}
+          />
+          {error && <div className="text-danger mt-2">{error}</div>}
         </Form.Group>
       </Modal.Body>
       <Modal.Footer>
@@ -57,8 +80,8 @@ function BooksPdf() {
   const [modalShow, setModalShow] = React.useState(false);
   const [data1, setData1] = useState([]);
   useEffect(()=>{
-    const data = axios.get(`${HOST}/download/document`).then((res) => { console.log(res.data); setData1(res.data) })
-  },[])
+    const data = axios.get(`${HOST}/download/document`).then((res) => {setData1(res.data) })
+  },[data1])
  
   const downloadFile=(id)=>{
     axios.get(`${HOST}/download/document/${id}`,{
@@ -101,8 +124,7 @@ function BooksPdf() {
           <View style={{ height: '150px' }} onClick={() => setModalShow(true)}>
             <SmallBox image={addclass} title="add books " />
           </View>
-          {Array.isArray(data1) && data1.length > 0 && data1
-            .filter((value) => value.mimetype === 'application/pdf') // Filter the data
+          {data1&& data1.length > 0 && data1 // Filter the data
             .map((value, key) => (
               <View style={{ height: '150px' }} key={key}>
                 <SmallBox image={openbook} title={value.filename} onPress={()=>{const id =value._id ;downloadFile(id)}} />

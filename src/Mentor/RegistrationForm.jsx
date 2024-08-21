@@ -5,6 +5,7 @@ import HeaderComponent from "../components/HeaderComponent";
 import user from "../assets/user.jpg";
 import { Button } from "react-bootstrap";
 import { TextInput } from "../components/TextInput";
+import { Link } from "react-router-dom";
 
 
 function RegistrationForm() {
@@ -26,7 +27,7 @@ function RegistrationForm() {
                     <p style={{ fontSize: '10px' }}>Qualification</p>
                     <TextInput type="text" />
                 </View>
-                <View style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}><Button style={{ backgroundColor: '#DBDC31' }}>PAY</Button></View>
+                <View style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}><Link to="/Payment"><Button style={{ backgroundColor: '#DBDC31' }}>PAY</Button></Link></View>
             </View>
         </>
     );

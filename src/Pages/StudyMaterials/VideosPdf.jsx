@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import addclass from "../../assets/ADDCLASS.png";
 import videos from "../../assets/videos.png";
 import HeaderComponent from '../../components/HeaderComponent';
@@ -7,6 +7,8 @@ import SmallBox from '../../components/SmallBox';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
+import { HOST } from '../../App';
 
 function MyVerticallyCenteredModal(props) {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -60,7 +62,11 @@ function MyVerticallyCenteredModal(props) {
 
 function VideosPdf() {
   const [modalShow, setModalShow] = React.useState(false);
-
+  const [data1, setData1] = useState([]);
+  useEffect(()=>{
+    const data = axios.get(`${HOST}/download/document`).then((res) => {setData1(res.data) })
+  },[data1])
+ 
   return (
     <>
       <HeaderComponent page="Add study Materials" title="Books" />
@@ -88,6 +94,12 @@ function VideosPdf() {
           <View style={{ height: '150px' }}>
             <SmallBox image={videos} title="English.mpv4" />
           </View>
+          {data1&& data1.length > 0 && data1 // Filter the data
+            .map((value, key) => (
+              <View style={{ height: '150px' }} key={key}>
+                <SmallBox image={videos} title={value.filename} onPress={()=>{const id =value._id ;downloadFile(id)}} />
+              </View>
+            ))}
         </View>
       </div>
       <MyVerticallyCenteredModal
