@@ -117,7 +117,7 @@ function Register() {
                   <option value="" disabled>Select Role</option>
                   <option value="student">Student</option>
                   <option value="mentor">Mentor</option>
-                  <option value="admin">Admin</option>
+                  {/* <option value="admin">Admin</option> */}
                 </Form.Select>
               </InputGroup>
             </Form.Group>
