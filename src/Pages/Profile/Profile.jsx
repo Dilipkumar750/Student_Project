@@ -54,7 +54,7 @@ function Profile() {
         <List>
           <Image src={onoffImg} alt="open book" style={{ width: '80%' }} />
           <span>Logout</span>
-          <HiChevronRight style={{ height: '100%', width: '100%' }} />
+          <Link to='/login'><HiChevronRight style={{ height: '100%', width: '100%' }} /></Link>
         </List>
       </View >
     </>

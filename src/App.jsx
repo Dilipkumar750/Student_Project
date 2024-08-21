@@ -16,7 +16,7 @@ import VideosPdf from './Pages/StudyMaterials/VideosPdf';
 import TestHome from './Pages/Test/TestHome';
 import AddTest from './Pages/Test/AddTest';
 import MarkList from './Pages/Test/MarkList';
-import TestList from './Pages/Test/TestList';
+import TestList from './Mentor/test/TestList';
 import FAQ from './Pages/TermsAndConditions/FAQ';
 import PrivacyPolicy from './Pages/TermsAndConditions/PrivacyPolicy';
 import TermsAndConditions from './Pages/TermsAndConditions/TermsAndConditions';
@@ -55,7 +55,14 @@ import TestCreate from './Pages/Test/TestCreate';
 import AdminInfoTypes from './Admin/MoreInformations/AdminInfoTypes';
 import AdminAddJob from './Admin/MoreInformations/AdminAddJob';
 import StudentRequest from './Admin/MoreInformations/StudentRequest';
-export const HOST='https://studen-app.onrender.com/rural_rise' 
+import MentorRequest from './Admin/MoreInformations/MentorRequest';
+import Materials from './Mentor/Materials';
+import MaterialList from './Mentor/MaterialList';
+import MentorMathTest from './Mentor/test/Test';
+export const HOST='https://ultrafly-student-backend.onrender.com/rural_rise' 
+// export const HOST='https://studen-app.onrender.com/rural_rise' 
+// export const HOST='http://localhost:8080/rural_rise' 
+
 
 
 function App() {
@@ -104,7 +111,7 @@ function App() {
         <Route path='/MentorDetails' element={<MentorDetails/>}/>
         <Route path='/MentorList' element={<MentorList/>}/>
         <Route path='/MentorRecords' element={<MentorRecords/>}/>
-        <Route path='/MentorSuccess' element={<MentorSuccess/>}/>
+        <Route path='/MentorSuccess/:title' element={<MentorSuccess/>}/>
         <Route path='/InformationTypes/:title' element={<InformationTypes/>}/>
         <Route path='/MentorTestSuccess' element={<MentorTestSuccess/>}/>
         <Route path='/InformationDetails/:title' element={<InformationDetails/>}/>
@@ -118,6 +125,10 @@ function App() {
         <Route path='/AdminInfoTypes/:title' element={<AdminInfoTypes/>}/>
         <Route path='/AdminAddJob' element={<AdminAddJob/>}/>
         <Route path='/StudentRequest' element={<StudentRequest/>}/>
+        <Route path='/MentorRequest' element={<MentorRequest/>}/>
+        <Route path='/mentorMaterials' element={<Materials/>}/>
+        <Route path='/mentorMaterialList/:title' element={<MaterialList/>}/>
+        <Route path='/mentorMathTest' element={<MentorMathTest/>}/>
       </Routes>
     </>
   )

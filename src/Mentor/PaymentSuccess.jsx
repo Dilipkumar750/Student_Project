@@ -3,6 +3,7 @@ import tick from "../assets/tick.png";
 import { Image } from "../components/Image";
 import HeaderComponent from "../components/HeaderComponent";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 function PaymentSuccess() {
@@ -17,7 +18,7 @@ function PaymentSuccess() {
                     <h3>Payment Successful</h3>
                 </View>
             </View>
-            <Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button>
+            <Link to='/MentorHome'><Button style={{width:'100%',backgroundColor:'#DBDC31',position:'absolute',bottom:0,color:'black'}}>OK</Button></Link>
         </>
     )
 }

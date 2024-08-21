@@ -5,6 +5,7 @@ import test from "../../assets/test.png";
 import { Image } from '../../components/Image';
 import View from '../../components/View';
 import success from "../../assets/SUCCESS.png";
+import { Link } from 'react-router-dom';
 
 function Success() {
     return (
@@ -34,7 +35,7 @@ function Success() {
                             </p>
                         </View>
                     </View>
-                    <a href=""><p style={{ textAlign: 'center'}}>Click here for progress checking</p></a>
+                    <Link to="/Progress"><p style={{ textAlign: 'center'}}>Click here for progress checking</p></Link>
                 </View>
             </View>
         </>

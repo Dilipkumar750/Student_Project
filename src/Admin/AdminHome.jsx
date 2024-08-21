@@ -8,6 +8,8 @@ import RequestList from "../assets/RequestList.png";
 import { Image } from "../components/Image";
 import SmallBox from "../components/SmallBox";
 import View from "../components/View"; 
+import { Link } from "react-router-dom";
+
 
 function AdminHome() {
   return (
@@ -35,18 +37,26 @@ function AdminHome() {
           padding: "0 0.6rem",
         }}
       >
-        <View style={{height: '100%'}}>
-          <SmallBox image={AddMentor} title="Add Mentor" />
-        </View>
-        <View style={{height: '100%'}}>
-          <SmallBox image={MoreInfo} title="More Information" />
-        </View>
-        <View style={{height: '100%'}}>
-          <SmallBox image={MentorRecords} title="Mentor Records" />
-        </View>
-        <View style={{height: '100%',}}>
-          <SmallBox image={RequestList} title="Request List" />
-        </View>
+        <Link to='/MentorList'>
+          <View style={{height: '100%'}}>
+            <SmallBox image={AddMentor} title="Add Mentor" />
+          </View>
+        </Link>
+        <Link to='/MoreInfoHomes'>
+          <View style={{height: '100%'}}>
+            <SmallBox image={MoreInfo} title="More Information" />
+          </View>
+        </Link>
+        <Link to='/MentorRecords'>
+          <View style={{height: '100%'}}>
+            <SmallBox image={MentorRecords} title="Mentor Records" />
+          </View>
+        </Link>
+        <Link to='/StudentRequest'>
+          <View style={{height: '100%',}}>
+            <SmallBox image={RequestList} title="Request List" />
+          </View>
+        </Link>
       </View>
       <View style={{
         border: "1px solid rgba(0, 0, 0, 0.16)",

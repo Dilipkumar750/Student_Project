@@ -8,6 +8,7 @@ import HeaderComponent from '../../components/HeaderComponent';
 import addclass from '../../assets/ADDCLASS.png';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -37,6 +38,8 @@ function MyVerticallyCenteredModal(props) {
 
 
 function AddClass() {
+  const navigate = useNavigate();
+
   const [modalShow, setModalShow] = React.useState(false);
 
   // Define an array for the class names
@@ -65,7 +68,7 @@ function AddClass() {
               >
                 <Image src={openBookImg} alt="open book" style={{width:'80%'}} />
                 <span>{className}</span> {/* Centers the text */}
-                <HiChevronRight style={{ height: '24px', width: '24px' }} />
+                <HiChevronRight style={{ height: '24px', width: '24px' }} onClick={()=>navigate('/BooksAndVideos')} />
               </List>
             ))}
           </View>

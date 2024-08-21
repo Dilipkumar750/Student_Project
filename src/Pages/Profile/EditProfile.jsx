@@ -10,8 +10,10 @@ import email from "../../assets/mail.png";
 import age from "../../assets/age.png";
 import gender from "../../assets/gender.png";
 
+
 // Adjust this import based on your actual `Image` component or use <img>
 import Image from 'react-bootstrap/Image';
+import { Link } from 'react-router-dom';
 
 function EditProfile() {
   return (
@@ -150,13 +152,15 @@ function EditProfile() {
               </Form.Group>
 
               {/* Save Button */}
-              <Button
-                variant="primary"
-                className="mt-2"
-                style={{ backgroundColor: '#DBDC31', borderColor: '#DBDC31', width: '100%', color: 'black' }}
-              >
-                OK
-              </Button>
+              <Link to='/Profile'>
+                <Button
+                  variant="primary"
+                  className="mt-2"
+                  style={{ backgroundColor: '#DBDC31', borderColor: '#DBDC31', width: '100%', color: 'black' }}
+                >
+                  OK
+                </Button>
+              </Link>
             </Form>
           </Col>
         </Row>
