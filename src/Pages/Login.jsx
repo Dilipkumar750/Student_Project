@@ -7,7 +7,7 @@ import password from "../assets/password.png";
 import { Image } from "../components/Image";
 import axios from 'axios'
 import { HOST } from '../App';
-import { useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 function Login() {
   const navigate = useNavigate();
   const [getData, setGetData] = useState({});
@@ -95,7 +95,7 @@ function Login() {
 
 
             <div className="text-center mt-5">
-              <p>Don’t Have An Account? <a href="/register">Register</a></p>
+              <p>Don’t Have An Account? <NavLink to="/register">Register</NavLink></p>
             </div>
           </Form>
         </Col>

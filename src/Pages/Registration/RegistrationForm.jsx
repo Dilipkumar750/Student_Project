@@ -30,7 +30,7 @@ function RegistrationForm() {
 
   const onSubmit = () => {
     console.log('values', getData);
-    axios.post(`${HOST}/user/registation`, getData)
+    axios.post(`${HOST}/user/registation`, getData,{withCredentials:true})
       .then((res) => {
         if (res.data.message === 'Success') {
           navigate('/RegistrationSucess');

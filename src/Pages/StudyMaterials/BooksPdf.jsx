@@ -19,7 +19,7 @@ function MyVerticallyCenteredModal(props) {
   const handleAddClick = () => {
     const formData = new FormData();
     formData.append('file', selectedFile);
-    axios.post(`${HOST}/upload/document`, formData)
+    t(`${HOST}/upload/document`, formData)
     if (selectedFile) {
       console.log('Selected file:', formData);
     }
