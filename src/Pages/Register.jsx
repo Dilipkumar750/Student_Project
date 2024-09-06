@@ -10,14 +10,14 @@ import View from "../components/View"
 import { Image } from '../components/Image';
 import axios from 'axios';
 import { HOST } from '../App';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import {  NavLink, useNavigate } from 'react-router-dom';
 
 function Register() {
   const [createuser, setCreateUser] = useState({
     name: '',
     email: '',
     role: '',
-    contact_number: '',
+    contact_no: '',
     classes: '',
     department: '',
     password: '',
@@ -42,7 +42,7 @@ function Register() {
 
   const register = async () => {
     try {
-      const res = await axios.post(`${HOST}/user/register`, createuser,{withCredentials:true});
+      const res = await axios.post(`${HOST}/user/register`, createuser, { withCredentials: true });
       console.log(res.data);
       setValid(res.data.message);
 
@@ -129,8 +129,8 @@ function Register() {
                   type="text"
                   placeholder="Contact Number"
                   aria-label="Contact Number"
-                  name="contact_number"
-                  value={createuser.contact_number}
+                  name="contact_no"
+                  value={createuser.contact_no}
                   onChange={handleChange}
                 />
                 <InputGroup.Text style={{ background: 'transparent', border: 'none' }}>
