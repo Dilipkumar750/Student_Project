@@ -8,6 +8,8 @@ import { Image } from "../components/Image";
 import axios from 'axios'
 import { HOST } from '../App';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.jpg';
+
 function Login() {
   const navigate = useNavigate();
   const [getData, setGetData] = useState({});
@@ -47,12 +49,10 @@ function Login() {
       <Row className="w-100">
         <Col md={{ span: 6, offset: 3 }}>
           <View className="text-center mb-6">
-            <h1 className="text-center" style={{ marginBottom: '20%' }}>LOGIN</h1>
-            <br />
+            <h1 className="text-center" style={{ marginBottom: '0%' }}>LOGIN</h1>
+            <Image src={logo} alt={'logo'} className="mb-4" />
             {err ? <small className='text-danger text-center' ><b style={{ alignItems: 'center', justifyContent: 'center' }}>UserName or Password is Incorrect</b></small> : null}
-            <br />
           </View>
-          <br /><br />
           <Form>
             <Form.Group controlId="formUsername" className="mb-3">
               <InputGroup>

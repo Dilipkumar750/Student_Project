@@ -5,12 +5,12 @@ import View from "../../components/View";
 function FAQ() {
   const faqs = [
     {
-      question: '1. What is Rural Rise?',
-      answer: 'Rural Rise is an innovative educational app designed to empower students in rural areas with access to quality educational resources, interactive learning tools, and mentorship programs to enhance their learning journey.'
+      question: '1. What is Rise Learn?',
+      answer: 'Rise Learn is an innovative educational app designed to empower students in rural areas with access to quality educational resources, interactive learning tools, and mentorship programs to enhance their learning journey.'
     },
     {
-      question: '2. How does Rural Rise work?',
-      answer: 'Rural Rise provides a platform where students can access a wide range of educational materials, including video lessons, interactive quizzes, and eBooks, tailored to their educational needs. The app also connects students with educators and mentors for personalized guidance.'
+      question: '2. How does Rise Learn work?',
+      answer: 'Rise Learn provides a platform where students can access a wide range of educational materials, including video lessons, interactive quizzes, and eBooks, tailored to their educational needs. The app also connects students with educators and mentors for personalized guidance.'
     }
   ];
 

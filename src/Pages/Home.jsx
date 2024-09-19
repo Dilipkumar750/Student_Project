@@ -16,14 +16,14 @@ function Home() {
   const navigate=useNavigate();
   return (
     <>
-      <HeaderComponent page="Rural Rise" title="Empowering Growth" />
+      <HeaderComponent page="Rise Learn" title="Empowering Growth" />
       <View className="row align-items-start border border-1 m-2 py-3">
         <View className="col-4">
           <Image src={img1} className="img-fluid rounded-start" alt="..." />
         </View>
         <View className="col-8">
           <h5 style={{ fontSize: "12px", alignItems: "center" }}>
-            Welcome To RuralRise!!!!
+            Welcome To Rise Learn!!!!
           </h5>
           <p style={{ fontSize: "10px", textAlign: "center" }}>
             Explore, Learn, Thrive: Access curated study materials tailored to

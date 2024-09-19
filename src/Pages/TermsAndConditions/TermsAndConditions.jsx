@@ -6,7 +6,7 @@ function TermsAndConditions() {
   const faqs = [
     {
       question: '1. Use of the App',
-      answer: 'The Rural Rise app is designed to provide educational resources and interactive learning opportunities to students in rural areas. Users must be at least Minimum Age years old or have the consent of their parent or guardian. The app is for personal and educational use only. Commercial use is strictly prohibited.'
+      answer: 'The Rise Learn app is designed to provide educational resources and interactive learning opportunities to students in rural areas. Users must be at least Minimum Age years old or have the consent of their parent or guardian. The app is for personal and educational use only. Commercial use is strictly prohibited.'
     },
     {
       question: '2. Account Registration',
@@ -18,9 +18,9 @@ function TermsAndConditions() {
     <View>
       <HeaderComponent page='Terms and Conditions' />
       <View style={{ width: '80%', margin: '20px auto' }}>
-      <h4>Welcome to Rural Rise!</h4>
+      <h4>Welcome to Rise Learn!</h4>
           <p>
-            These Terms and Conditions govern your use of the Rural Rise app and provide important information about your rights and obligations. By accessing or using the Rural Rise app, you agree to be bound by these Terms and Conditions and our Privacy Policy.
+            These Terms and Conditions govern your use of the Rise Learn app and provide important information about your rights and obligations. By accessing or using the Rise Learn app, you agree to be bound by these Terms and Conditions and our Privacy Policy.
           </p>
         {faqs.map((faq, index) => (
           <View key={index} style={{ marginBottom: '20px' }}>

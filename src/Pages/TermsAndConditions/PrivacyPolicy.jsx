@@ -18,9 +18,9 @@ function PrivacyPolicy() {
     <View>
       <HeaderComponent page='Privacy Policy' />
       <View style={{ width: '80%', margin: '20px auto' }}>
-      <h4>Welcome to Rural Rise!</h4>
+      <h4>Welcome to Rise Learn!</h4>
           <p>
-          Education App ("Rural Rise," "we," "us," or "our"). Your privacy is of paramount importance to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application (the "Application"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.          </p>
+          Education App ("Rise Learn," "we," "us," or "our"). Your privacy is of paramount importance to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application (the "Application"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.          </p>
         {faqs.map((faq, index) => (
           <View key={index} style={{ marginBottom: '20px' }}>
             <View style={{

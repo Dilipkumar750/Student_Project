@@ -14,14 +14,14 @@ import { Link } from "react-router-dom";
 function AdminHome() {
   return (
     <>
-      <HeaderComponent page="Rural Rise" title="Empowering Growth" />
+      <HeaderComponent page="Rise Learn" title="Empowering Growth" />
       <View className="row align-items-start border border-1 m-2 py-3">
         <View className="col-4">
           <Image src={img1} className="img-fluid rounded-start" alt="Welcome image" />
         </View>
         <View className="col-8">
           <h5 style={{ fontSize: "1.25rem", textAlign: "center" }}>
-            Welcome To RuralRise!!!!
+            Welcome To Rise Learn!!!!
           </h5>
           <p style={{ fontSize: "0.65rem", textAlign: "center" }}>
             Explore, Learn, Thrive: Access curated study materials tailored to
